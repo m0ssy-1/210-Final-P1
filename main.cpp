@@ -2,6 +2,7 @@
 #include <fstream>
 #include <map>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -33,9 +34,13 @@ int main () {
     }
 
     std::cout << "All airport traffic counts:\n";
+    std::cout << std::left << std::setw(10) << "Airport" << " | "
+              << std::right << std::setw(7)  << "Traffic" << "\n";
     for (const auto &entry : traffic) {
-        std::cout << entry.first << " " << entry.second << '\n';
+        std::cout << std::left << std::setw(10) << entry.first << " | "
+                  << std::right << std::setw(7) << entry.second << '\n';
     }
+    std::cout << "\n";
 
     int maxCount = 0;
     for (const auto &entry : traffic) {
@@ -45,11 +50,16 @@ int main () {
     }
 
     std::cout << "\nBusiest airports with count " << maxCount << ":\n";
+    std::cout << std::left << std::setw(10) << "Airport" << " | "
+              << std::right << std::setw(7) << "Traffic" << "\n";
+
     for (const auto &entry : traffic) {
         if (entry.second == maxCount) {
-            std::cout << entry.first << " " << entry.second << '\n';
+            std::cout << std::left << std::setw(10) << entry.first << " | " 
+                      << std::right << std::setw(7) << entry.second << '\n';
         }
      }
+     std::cout << "\n";
 
      printAirportsInRange(traffic, 5, 8);
      printAirportsInRange(traffic, 9, 12);
