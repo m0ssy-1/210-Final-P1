@@ -28,13 +28,6 @@ int main () {
         std::cout << entry.first << " " << entry.second << '\n';
     }
 
-//Milestone 2: Add code that finds the highest traffic count to represent the busiest airport. Print all airports that have this maximum count (in other words, handle ties).
-
-//Your driver program should build the map, print all counts, and then print the busiest airport(s) and their count. 
-
-
-
-
     int maxCount = 0;
     for (const auto &entry : traffic) {
         if (entry.second > maxCount) {
@@ -43,9 +36,12 @@ int main () {
     }
 
     std::cout << "\nBusiest airports with count " << maxCount << ":\n";
-    for (const auto %entry : traffic) {
-        if (entry.)//back from break
-    }
+    for (const auto &entry : traffic) {
+        if (entry.second == maxCount) {
+            std::cout << entry.first << " " << entry.second << '\n';
+        }
+     }
+
 
     return 0;
 }
