@@ -44,7 +44,7 @@ int main () {
 
     std::cout << "\nBusiest airports with count " << maxCount << ":\n";
     for (const auto %entry : traffic) {
-        if (entry.)
+        if (entry.)//bathroom break
     }
 
     return 0;
