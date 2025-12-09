@@ -8,8 +8,13 @@ using namespace std;
 
 //Your driver program should build the map and call the function at least twice with different ranges, clearly showing which airports fall in each range. Do not code user input. 
 
-void printAirportsInRange(const std::map<std::string, int %traffic, int low, int high) {
-    std::cot << "\nAirports with traffix"
+void printAirportsInRange(const std::map<std::string, int> &traffic, int low, int high) {
+    std::cout << "\nAirports with traffix in range [" << low << ", " << high << "]:\n";
+    for (const auto &entry : traffic) {
+        if (entry.second >= low & entry.second <= high) {
+            std::cout << entry.first << " " << entry.second << '\n';
+        }
+    }
 }
 
 
@@ -49,6 +54,9 @@ int main () {
             std::cout << entry.first << " " << entry.second << '\n';
         }
      }
+
+     printAirportsInRange(traffic, 5, 8);
+     printAirportsInRange(traffic, 9, 12);
 
 
     return 0;
