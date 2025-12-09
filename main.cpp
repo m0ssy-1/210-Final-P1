@@ -9,7 +9,7 @@ int main () {
 
     std::map<std::string, int> traffic;
 
-    std::ifstream in("final.codes.txt");
+    std::ifstream in("../final.codes.txt");
     if (!in) {
         cout << "Error opening file." << endl;
         return 1;
